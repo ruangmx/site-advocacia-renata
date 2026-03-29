@@ -26,8 +26,7 @@ function Contact() {
                 >
                   <MessageCircle className="h-6 w-6 text-green-500 mr-4" />
                   <div>
-                    <h3 className="font-semibold text-green-500">WhatsApp</h3>
-                    <p className="text-white">(61) 9 9319-4945</p>
+                    
                   </div>
                 </a>
 
@@ -51,8 +50,8 @@ function Contact() {
                   <MapPin className="h-6 w-6 text-[#722F37] mr-4" />
                   <div>
                     <h3 className="font-semibold text-[#722F37]">Endereço</h3>
-                    <p className="text-white">QS 1 BLOCO D - Águas Claras</p>
-                    <p className="text-white">Edifício Connect Towers, Brasília - DF</p>
+                    <p className="text-white"> Águas Claras</p>
+                    <p className="text-white"> Brasília - DF</p>
                   </div>
                 </div>
                 
