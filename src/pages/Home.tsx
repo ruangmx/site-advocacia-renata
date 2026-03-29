@@ -4,34 +4,34 @@ import { Link } from 'react-router-dom';
 function Home() {
   const services = [
     {
-      icon: Shield,
-      title: "Defesa em Processo Penal",
-      description: "Representação em inquéritos policiais, ações penais e elaboração de recursos e habeas corpus."
+      icon: Gavel,
+      title: "Defesa Especial em Tribunal do Júri",
+      description: "Atuação estratégica e humanizada em julgamentos por júri. Preparação minuciosa de defesa e articulação com todas as instâncias judiciais em Brasília."
     },
     {
       icon: Scale,
-      title: "Consultoria Jurídica Criminal",
-      description: "Assessoria preventiva, consultoria em compliance e análise de risco criminal."
+      title: "Audiências de Custódia",
+      description: "Defesa especializada em audiências de custódia, garantindo preservação de direitos e liberdade processual. Atuação imediata e incisiva nas primeiras horas de prisão."
     },
     {
       icon: Landmark,
-      title: "Direito Penal Econômico",
-      description: "Defesa em casos de crimes financeiros, corrupção e lavagem de dinheiro."
+      title: "Crimes Financeiros e Econômicos",
+      description: "Defesa criminal especializada em fraude, lavagem de dinheiro, evasão de divisas e crimes contra a administração pública nos tribunais federais e estaduais."
     },
     {
-      icon: Gavel,
-      title: "Crimes Contra a Pessoa",
-      description: "Defesa em casos de homicídio, lesão corporal e violência doméstica."
+      icon: Shield,
+      title: "Defesa Criminal Geral",
+      description: "Representação em inquéritos policiais, ações penais, recursos e habeas corpus. Atuação estratégica em todas as fases do processo penal."
     },
     {
       icon: BookOpen,
-      title: "Direito Penal Ambiental",
-      description: "Defesa em casos de crimes ambientais e consultoria em legislação ambiental."
+      title: "Consultoria Criminal Preventiva",
+      description: "Assessoria preventiva para empresas e pessoas físicas, análise de risco criminal e compliance com legislação penal vigente."
     },
     {
       icon: UserCheck,
-      title: "Direito Penal Digital",
-      description: "Defesa em casos de crimes cibernéticos e assessoria em proteção de dados."
+      title: "Defesa em Crimes Contra a Pessoa",
+      description: "Atuação em crimes graves como homicídio, lesão corporal gravíssima e violência doméstica, com abordagem humanizada e eficaz."
     }
   ];
 
@@ -51,9 +51,9 @@ function Home() {
               <h1 className="text-4xl md:text-5xl font-serif mb-4">RENATA ANDRADE</h1>
               <h2 className="text-2xl md:text-3xl mb-6">Advogados e Associados</h2>
               <p className="text-lg md:text-xl mb-8 max-w-3xl">
-                Somos especialistas em Direito Penal, dedicados a fornecer defesa jurídica de excelência para nossos clientes. 
-                Com uma equipe altamente qualificada e experiente, estamos comprometidos em proteger os direitos e interesses 
-                daqueles que enfrentam acusações criminais.
+                Ofertamos Defesa Criminal Especializada em Brasília, com atuação estratégica em Tribunal do Júri, Audiências de Custódia 
+                e todas as instâncias judiciais. Nossa equipe altamente qualificada está comprometida em proteger seus direitos com ética, 
+                competência e dedicação em cada caso.
               </p>
               <Link
                 to="/contato"
@@ -74,18 +74,18 @@ function Home() {
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold mb-6 text-gray-900">Nossa Missão</h2>
                 <p className="text-lg text-gray-700 max-w-4xl mx-auto">
-                  Fornecer defesa jurídica de excelência, protegendo os direitos e liberdades dos nossos clientes com ética, 
-                  integridade e competência. Comprometemo-nos a oferecer um serviço personalizado, estratégico e dedicado em 
-                  todas as fases do processo criminal, garantindo um tratamento justo e igualitário para todos.
+                  Fornecer Defesa Criminal Especializada de excelência, protegendo os direitos e liberdades de nossos clientes em Brasília. 
+                  Atuamos com ética, integridade e competência técnica em todas as fases do processo penal, desde inquéritos policiais até 
+                  recursos no Superior Tribunal de Justiça, oferecendo estratégia personalizada e defesa intransigente.
                 </p>
               </div>
 
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold mb-6 text-gray-900">Nossa Visão</h2>
                 <p className="text-lg text-gray-700 max-w-4xl mx-auto">
-                  Ser reconhecido como um dos principais escritórios de advocacia criminal do país, conhecido por nossa paixão 
-                  pela justiça, defesa intransigente dos direitos dos nossos clientes e nossa contribuição significativa para 
-                  a evolução e aprimoramento do Direito Penal.
+                  Ser reconhecido em Brasília como referência em Defesa Criminal Especializada, com atuação estratégica em Tribunal do Júri 
+                  e processo penal complexo. Buscamos ser sinônimo de excelência técnica, defesa intransigente e compromisso com a justiça, 
+                  contribuindo para a evolução do Direito Penal no Distrito Federal.
                 </p>
               </div>
 
