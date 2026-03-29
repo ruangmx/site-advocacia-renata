@@ -18,18 +18,6 @@ function Contact() {
               </p>
               
               <div className="space-y-6">
-                <a 
-                  href="https://api.whatsapp.com/send/?phone=5561993194945&text&type=phone_number&app_absent=0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center transform hover:scale-105 transition-transform duration-300 cursor-pointer"
-                >
-                  <MessageCircle className="h-6 w-6 text-green-500 mr-4" />
-                  <div>
-                    
-                  </div>
-                </a>
-
                 <div className="flex items-center transform hover:scale-105 transition-transform duration-300 cursor-pointer">
                   <Phone className="h-6 w-6 text-[#722F37] mr-4" />
                   <div>
