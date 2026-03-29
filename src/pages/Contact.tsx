@@ -21,7 +21,7 @@ function Contact() {
                 <div className="flex items-center transform hover:scale-105 transition-transform duration-300 cursor-pointer">
                   <Phone className="h-6 w-6 text-[#722F37] mr-4" />
                   <div>
-                    <h3 className="font-semibold text-[#722F37]">Telefone</h3>
+                    <h3 className="font-semibold text-[#722F37] bg-black bg-opacity-50 px-2 py-1 rounded">Telefone</h3>
                     <p className="text-white">(61) 9 9319-4945</p>
                   </div>
                 </div>
@@ -29,7 +29,7 @@ function Contact() {
                 <div className="flex items-center transform hover:scale-105 transition-transform duration-300 cursor-pointer">
                   <Mail className="h-6 w-6 text-[#722F37] mr-4" />
                   <div>
-                    <h3 className="font-semibold text-[#722F37]">E-mail</h3>
+                    <h3 className="font-semibold text-[#722F37] bg-black bg-opacity-50 px-2 py-1 rounded">E-mail</h3>
                     <p className="text-white">contato@renataandrade.adv.br</p>
                   </div>
                 </div>
@@ -37,7 +37,7 @@ function Contact() {
                 <div className="flex items-center transform hover:scale-105 transition-transform duration-300 cursor-pointer">
                   <MapPin className="h-6 w-6 text-[#722F37] mr-4" />
                   <div>
-                    <h3 className="font-semibold text-[#722F37]">Endereço</h3>
+                    <h3 className="font-semibold text-[#722F37] bg-black bg-opacity-50 px-2 py-1 rounded">Endereço</h3>
                     <p className="text-white"> Águas Claras</p>
                     <p className="text-white"> Brasília - DF</p>
                   </div>
@@ -46,7 +46,7 @@ function Contact() {
                 <div className="flex items-center transform hover:scale-105 transition-transform duration-300 cursor-pointer">
                   <Clock className="h-6 w-6 text-[#722F37] mr-4" />
                   <div>
-                    <h3 className="font-semibold text-[#722F37]">Horário de Atendimento</h3>
+                    <h3 className="font-semibold text-[#722F37] bg-black bg-opacity-50 px-2 py-1 rounded">Horário de Atendimento</h3>
                     <p className="text-white">Segunda a Sexta: 9h às 18h</p>
                   </div>
                 </div>
