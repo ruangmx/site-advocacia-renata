@@ -1,6 +1,62 @@
+import { useState, FormEvent, ChangeEvent } from 'react';
 import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+
+  const [status, setStatus] = useState('');
+
+  const handleChange =
+    (field: keyof typeof formData) =>
+    (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFormData((prev) => ({ ...prev, [field]: event.target.value }));
+    };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (!formData.name || !formData.email || !formData.message) {
+      setStatus('Por favor, preencha nome, e-mail e mensagem.');
+      return;
+    }
+
+    try {
+      const newEntry = {
+        ...formData,
+        createdAt: new Date().toISOString(),
+      };
+
+      // 1) backup local (opcional)
+      const current = JSON.parse(localStorage.getItem('contact_submissions') || '[]');
+      const fiveDaysAgo = Date.now() - 5 * 24 * 60 * 60 * 1000;
+      const cleaned = current.filter((item) => new Date(item.createdAt).getTime() > fiveDaysAgo);
+      localStorage.setItem('contact_submissions', JSON.stringify([...cleaned, newEntry]));
+
+      // 2) envio real (Netlify Function + nodemailer)
+      const response = await fetch('/.netlify/functions/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newEntry),
+      });
+
+      if (!response.ok) {
+        const serverText = await response.text();
+        throw new Error(`Erro servidor: ${serverText}`);
+      }
+
+      setStatus('Mensagem enviada com sucesso! Advogada será notificada por e-mail.');
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (error) {
+      console.error(error);
+      setStatus('Erro ao enviar. Tente novamente mais tarde.');
+    }
+  };
+
   return (
     <div 
       className="min-h-screen bg-cover bg-center bg-fixed"
@@ -55,7 +111,10 @@ function Contact() {
             
             <div className="bg-black bg-opacity-50 p-8 rounded-lg shadow-lg border-2 border-[#722F37]">
               <h2 className="text-2xl font-semibold mb-6 text-[#722F37]">Envie uma Mensagem</h2>
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={handleSubmit}>
+                {status && (
+                  <p className="text-sm text-yellow-300 mb-2">{status}</p>
+                )}
                 <div>
                   <label className="block text-white mb-2" htmlFor="name">
                     Nome
@@ -63,6 +122,8 @@ function Contact() {
                   <input
                     type="text"
                     id="name"
+                    value={formData.name}
+                    onChange={handleChange('name')}
                     className="w-full px-4 py-2 bg-black bg-opacity-50 border border-[#722F37] rounded-md 
                              text-white focus:outline-none focus:ring-2 focus:ring-[#722F37] focus:border-transparent
                              hover:border-[#8B3741] hover:shadow-lg transform hover:scale-[1.02]
@@ -77,6 +138,8 @@ function Contact() {
                   <input
                     type="email"
                     id="email"
+                    value={formData.email}
+                    onChange={handleChange('email')}
                     className="w-full px-4 py-2 bg-black bg-opacity-50 border border-[#722F37] rounded-md 
                              text-white focus:outline-none focus:ring-2 focus:ring-[#722F37] focus:border-transparent
                              hover:border-[#8B3741] hover:shadow-lg transform hover:scale-[1.02]
@@ -91,6 +154,8 @@ function Contact() {
                   <input
                     type="tel"
                     id="phone"
+                    value={formData.phone}
+                    onChange={handleChange('phone')}
                     className="w-full px-4 py-2 bg-black bg-opacity-50 border border-[#722F37] rounded-md 
                              text-white focus:outline-none focus:ring-2 focus:ring-[#722F37] focus:border-transparent
                              hover:border-[#8B3741] hover:shadow-lg transform hover:scale-[1.02]
@@ -104,6 +169,8 @@ function Contact() {
                   </label>
                   <textarea
                     id="message"
+                    value={formData.message}
+                    onChange={handleChange('message')}
                     rows={4}
                     className="w-full px-4 py-2 bg-black bg-opacity-50 border border-[#722F37] rounded-md 
                              text-white focus:outline-none focus:ring-2 focus:ring-[#722F37] focus:border-transparent
