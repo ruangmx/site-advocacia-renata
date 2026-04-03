@@ -86,7 +86,7 @@ function Contact() {
                   <Mail className="h-6 w-6 text-[#722F37] mr-4" />
                   <div>
                     <h3 className="font-semibold text-[#722F37] bg-black bg-opacity-50 px-2 py-1 rounded">E-mail</h3>
-                    <p className="text-white">contato@renataandrade.adv.br</p>
+                    <p className="text-white">andradeadvocacia.financeiro@gmail.com</p>
                   </div>
                 </div>
                 
